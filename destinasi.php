@@ -28,92 +28,101 @@ $data2 = mysqli_fetch_assoc($query2);
     <!-- header -->
     <header>
         <style type="text/css">
-        .banner-destinasi img {
-            height: 600px;
-            transition: 0.5s;
-        }
-        .rating h5 i.khusus {
-            color: gold;
-            font-size: 20px;
-        }
-        .box-input {
-            height: 50px;
-        }
+            .banner-destinasi img {
+                height: 600px;
+                transition: 0.5s;
+            }
 
-        .box-input .input-group-icon {
-            width: 50px;
-            height: 50px;
-            background: #326e6c;
-            border-radius: 0px;
-        }
+            .rating h5 i.khusus {
+                color: gold;
+                font-size: 20px;
+            }
 
-        .input-group-icon {
-            border: 1px solid #326e6c;
-        }
+            .box-input {
+                height: 50px;
+            }
 
-        .input-group-icon i {
-            color: #eee;
-        }
+            .box-input .input-group-icon {
+                width: 50px;
+                height: 50px;
+                background: #326e6c;
+                border-radius: 0px;
+            }
 
-        .form-cari {
-            height: 50px;
-            border-radius: 0px;
-            border: 1px solid #326e6c;
-            /* border-left: 0px; */
-        }
+            .input-group-icon {
+                border: 1px solid #326e6c;
+            }
 
-        .form-cari:focus {
-            box-shadow: none;
-        }
+            .input-group-icon i {
+                color: #eee;
+            }
 
-        @media screen and (max-width: 1200px) {
-            .banner-destinasi img {
-                height: 550px;
-                transition: 0.5s;
+            .form-cari {
+                height: 50px;
+                border-radius: 0px;
+                border: 1px solid #326e6c;
+                /* border-left: 0px; */
             }
-        }
-        @media screen and (max-width: 1100px) {
-            .banner-destinasi img {
-                height: 525px;
-                transition: 0.5s;
+
+            .form-cari:focus {
+                box-shadow: none;
             }
-        }
-        @media screen and (max-width: 1000px) {
-            .banner-destinasi img {
-                height: 500px;
-                transition: 0.5s;
+
+            @media screen and (max-width: 1200px) {
+                .banner-destinasi img {
+                    height: 550px;
+                    transition: 0.5s;
+                }
             }
-        }
-        @media screen and (max-width: 900px) {
-            .banner-destinasi img {
-                height: 475px;
-                transition: 0.5s;
+
+            @media screen and (max-width: 1100px) {
+                .banner-destinasi img {
+                    height: 525px;
+                    transition: 0.5s;
+                }
             }
-        }
-        @media screen and (max-width: 800px) {
-            .banner-destinasi img {
-                height: 450px;
-                transition: 0.5s;
+
+            @media screen and (max-width: 1000px) {
+                .banner-destinasi img {
+                    height: 500px;
+                    transition: 0.5s;
+                }
             }
-        }
-        @media screen and (max-width: 700px) {
-            .banner-destinasi img {
-                height: 425px;
-                transition: 0.5s;
+
+            @media screen and (max-width: 900px) {
+                .banner-destinasi img {
+                    height: 475px;
+                    transition: 0.5s;
+                }
             }
-        }
-        @media screen and (max-width: 600px) {
-            .banner-destinasi img {
-                height: 400px;
-                transition: 0.5s;
+
+            @media screen and (max-width: 800px) {
+                .banner-destinasi img {
+                    height: 450px;
+                    transition: 0.5s;
+                }
             }
-        }
-        @media screen and (max-width: 500px) {
-            .banner-destinasi img {
-                height: 350px;
-                transition: 0.5s;
+
+            @media screen and (max-width: 700px) {
+                .banner-destinasi img {
+                    height: 425px;
+                    transition: 0.5s;
+                }
             }
-        }
+
+            @media screen and (max-width: 600px) {
+                .banner-destinasi img {
+                    height: 400px;
+                    transition: 0.5s;
+                }
+            }
+
+            @media screen and (max-width: 500px) {
+                .banner-destinasi img {
+                    height: 350px;
+                    transition: 0.5s;
+                }
+            }
         </style>
         <!-- navbar -->
         <?php include 'layouts/nav.php'; ?>
@@ -160,11 +169,11 @@ $data2 = mysqli_fetch_assoc($query2);
                         <?php
                         if (isset($_POST['cari'])) {
                         ?>
-                        <input type="text" class="form-control form-cari" placeholder="cari artikel..." name="cari" aria-describedby="basic-addon1" value="<?=$_POST['cari']?>">
+                            <input type="text" class="form-control form-cari" placeholder="cari artikel..." name="cari" aria-describedby="basic-addon1" value="<?= $_POST['cari'] ?>">
                         <?php
-                        } else { 
+                        } else {
                         ?>
-                        <input type="text" class="form-control form-cari" placeholder="cari artikel..." name="cari" aria-describedby="basic-addon1">
+                            <input type="text" class="form-control form-cari" placeholder="cari artikel..." name="cari" aria-describedby="basic-addon1">
                         <?php
                         }
                         ?>
@@ -199,21 +208,22 @@ $data2 = mysqli_fetch_assoc($query2);
                                             <div class="card-body">
                                                 <div class="rating">
                                                     <h5>
-                                                    <?php
-                                                    $hasil_rating = $ambil['rating'] / $ambil['perating'];
-                                                    for ($i=0; $i < $hasil_rating; $i++) { ?>
-                                                        <i class="fas fa-star khusus"></i>
-                                                    <?php
-                                                    } for ($x=$ambil['bintang']; $x > ceil($hasil_rating); $x--) { ?>
-                                                        <i class="far fa-star khusus"></i>
-                                                    <?php
-                                                    }
-                                                    ?>
+                                                        <?php
+                                                        $hasil_rating = $ambil['rating'] / $ambil['perating'];
+                                                        for ($i = 0; $i < $hasil_rating; $i++) { ?>
+                                                            <i class="fas fa-star khusus"></i>
+                                                        <?php
+                                                        }
+                                                        for ($x = $ambil['bintang']; $x > ceil($hasil_rating); $x--) { ?>
+                                                            <i class="far fa-star khusus"></i>
+                                                        <?php
+                                                        }
+                                                        ?>
                                                     </h5>
                                                 </div>
                                                 <h5 class="card-title"><?= $ambil['judul']; ?></h5>
                                                 <div class="card-text">
-                                                    <p class="text-muted mb-3"><?= $preview_sebagian;?>... <a href="single-destinasi.php?id=<?= $ambil['id_artikel']; ?>" style="color: #326e6c;">Lebih banyak</a></p>
+                                                    <p class="text-muted mb-3"><?= $preview_sebagian; ?>... <a href="single-destinasi.php?id=<?= $ambil['id_artikel']; ?>" style="color: #326e6c;">Lebih banyak</a></p>
                                                 </div>
                                             </div>
                                         </div>
